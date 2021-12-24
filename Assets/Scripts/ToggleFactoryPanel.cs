@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class ToggleFactoryPanel : MonoBehaviour
 {
-    public GameObject FactoryPanel;
     bool isInView = false;
+    public GameObject factoryPanel;
     // Start is called before the first frame update
     void Start()
     {
-        FactoryPanel.SetActive(false);
+        factoryPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Q)){
+            toggle();
+        }
     }
 
     public void toggle(){
         if(isInView){
-            FactoryPanel.SetActive(false);
+            factoryPanel.SetActive(false);
             isInView = false;
         }else{
-            FactoryPanel.SetActive(true);
+            factoryPanel.SetActive(true);
             isInView = true;
         }
     }
